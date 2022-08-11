@@ -25,7 +25,6 @@ final class MovieListViewController: UIViewController {
         return collectionView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()

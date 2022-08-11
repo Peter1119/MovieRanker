@@ -1,0 +1,5 @@
+disabled_rules:
+- leading_whitespace
+- trailing_whitespace
+included:
+excluded:

@@ -17,6 +17,8 @@ final class MovieListPresenter: NSObject {
     // 메모리 릭에 대한 예비
     private weak var viewController: MovieListViewController?
     
+    private var searchedMovie = [Movie]()
+    
     init(viewController: MovieListViewController) {
         self.viewController = viewController
     }
@@ -38,13 +40,22 @@ extension MovieListPresenter: UICollectionViewDelegateFlowLayout {
     ) -> CGSize {
         let spacing: CGFloat = 16.0
         let width: CGFloat = (collectionView.frame.width - spacing * 3) / 2
-        return CGSize(width: width, height: 210.0)
+        return CGSize(width: width, height: 220.0)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
+        let inset: CGFloat = 16.0
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
 }
 
 extension MovieListPresenter: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return searchedMovie.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
@@ -53,7 +64,8 @@ extension MovieListPresenter: UICollectionViewDataSource {
             withReuseIdentifier: MovieListCollectionViewCell.identifier,
             for: indexPath) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.backgroundColor = .red
+        let movie = searchedMovie[indexPath.item]
+        cell.bind(movie)
         
         return cell
     }

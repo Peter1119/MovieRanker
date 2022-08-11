@@ -24,6 +24,7 @@
 		3502570F28A53D2000D01CB3 /* MovieSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502570E28A53D2000D01CB3 /* MovieSearchManager.swift */; };
 		3502571228A5401600D01CB3 /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502571128A5401600D01CB3 /* MovieListPresenter.swift */; };
 		3502571428A547AE00D01CB3 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502571328A547AE00D01CB3 /* MovieListCollectionViewCell.swift */; };
+		353CBA1128A5A94B00865989 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 353CBA1028A5A94B00865989 /* .swiftlint.yml */; };
 		659A17A112E0DCECEC4957A1 /* Pods_MovieRankerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F55EB98386884C5EE6D02C6 /* Pods_MovieRankerTests.framework */; };
 		7E4F287DE4812425309BDAED /* Pods_MovieRanker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FC3E864801DE0EFEF2449E /* Pods_MovieRanker.framework */; };
 		83F8F49C1E3ADC4D1714F7FD /* Pods_MovieRanker_MovieRankerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B74B56A3FCC6AADF9302CA /* Pods_MovieRanker_MovieRankerUITests.framework */; };
@@ -66,6 +67,7 @@
 		3502570E28A53D2000D01CB3 /* MovieSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchManager.swift; sourceTree = "<group>"; };
 		3502571128A5401600D01CB3 /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
 		3502571328A547AE00D01CB3 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
+		353CBA1028A5A94B00865989 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		43B74B56A3FCC6AADF9302CA /* Pods_MovieRanker_MovieRankerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRanker_MovieRankerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FC3E864801DE0EFEF2449E /* Pods_MovieRanker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRanker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55EB98386884C5EE6D02C6 /* Pods_MovieRankerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRankerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 				350256DF28A537AC00D01CB3 /* MovieRankerTests */,
 				350256E928A537AC00D01CB3 /* MovieRankerUITests */,
 				350256C728A537AA00D01CB3 /* Products */,
+				353CBA1028A5A94B00865989 /* .swiftlint.yml */,
 				E802AE597E38CB45EF628801 /* Pods */,
 				A0A56F32D8F18B687F9E1A73 /* Frameworks */,
 			);
@@ -338,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				353CBA1128A5A94B00865989 /* .swiftlint.yml in Resources */,
 				350256D628A537AC00D01CB3 /* LaunchScreen.storyboard in Resources */,
 				350256D328A537AC00D01CB3 /* Assets.xcassets in Resources */,
 			);

@@ -1,0 +1,6 @@
+framework module Pods_MovieRanker_MovieRankerUITests {
+  umbrella header "Pods-MovieRanker-MovieRankerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

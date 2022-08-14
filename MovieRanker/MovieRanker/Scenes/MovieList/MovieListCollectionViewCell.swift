@@ -13,11 +13,11 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
     static let identifier = "MovieListCollectionViewCell"
     
     private lazy var imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = .secondarySystemBackground
-        return iv
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .secondarySystemBackground
+        return imageView
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -46,7 +46,7 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         
         imageView.kf.setImage(with: movie.imageURL)
         titleLabel.text = movie.title ?? ""
-        userRantingLabel.text = "⭐️ \(movie.ra)"
+        userRantingLabel.text = "⭐️ \(movie.userRating)"
     }
 }
 

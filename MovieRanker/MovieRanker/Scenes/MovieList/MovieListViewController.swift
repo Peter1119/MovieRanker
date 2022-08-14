@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class MovieListViewController: UIViewController {
     private lazy var presenter = MovieListPresenter(viewController: self)
@@ -24,6 +25,12 @@ final class MovieListViewController: UIViewController {
             forCellWithReuseIdentifier: MovieListCollectionViewCell.identifier)
         return collectionView
     }()
+    
+    private lazy var searchTableView = UITableView().then {
+        $0.delegate = presenter
+        $0.dataSource = presenter
+        $0.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +52,19 @@ extension MovieListViewController: MovieListProtocol {
     }
     
     func setUpViews() {
-        view.addSubview(movieListCollectionView)
+        [movieListCollectionView, searchTableView]
+            .forEach { view.addSubview($0) }
         
         movieListCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        searchTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    func updateSearchTableView(isHidden: Bool) {
+        searchTableView.isHidden = isHidden
     }
 }

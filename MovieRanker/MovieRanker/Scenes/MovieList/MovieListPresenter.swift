@@ -11,6 +11,7 @@ protocol MovieListProtocol: AnyObject {
     func setUpNavigationBar()
     func setUpSearchBar()
     func setUpViews()
+    func updateSearchTableView(isHidden: Bool)
 }
 
 final class MovieListPresenter: NSObject {
@@ -40,7 +41,7 @@ extension MovieListPresenter: UICollectionViewDelegateFlowLayout {
     ) -> CGSize {
         let spacing: CGFloat = 16.0
         let width: CGFloat = (collectionView.frame.width - spacing * 3) / 2
-        return CGSize(width: width, height: 220.0)
+        return CGSize(width: width, height: 210.0)
     }
     
     func collectionView(
@@ -67,6 +68,28 @@ extension MovieListPresenter: UICollectionViewDataSource {
         let movie = searchedMovie[indexPath.item]
         cell.bind(movie)
         
+        return cell
+    }
+}
+
+extension MovieListPresenter: UITableViewDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewController?.updateSearchTableView(isHidden: false)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewController?.updateSearchTableView(isHidden: true)
+    }
+}
+
+extension MovieListPresenter: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "\(indexPath.row)"
         return cell
     }
 }

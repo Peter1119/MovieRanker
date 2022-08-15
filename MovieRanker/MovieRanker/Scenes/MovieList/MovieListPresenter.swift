@@ -18,10 +18,16 @@ final class MovieListPresenter: NSObject {
     // 메모리 릭에 대한 예비
     private weak var viewController: MovieListViewController?
     
+    private let movieSearchManager: MovieSearchManagerProtocol
+    
     private var searchedMovie = [Movie]()
     
-    init(viewController: MovieListViewController) {
+    init(
+        viewController: MovieListViewController,
+        movieSearchManager: MovieSearchManagerProtocol = MovieSearchManager()
+    ) {
         self.viewController = viewController
+        self.movieSearchManager = movieSearchManager
     }
     
     func viewDidLoad() {
@@ -78,18 +84,26 @@ extension MovieListPresenter: UITableViewDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchedMovie = []
         viewController?.updateSearchTableView(isHidden: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        movieSearchManager.requestMovieList(from: searchText) { [weak self] movies in
+            self?.searchedMovie = movies
+            self?.viewController?.updateSearchTableView(isHidden: false)
+        }
     }
 }
 
 extension MovieListPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        return searchedMovie.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = searchedMovie[indexPath.row].title ?? ""
         return cell
     }
 }

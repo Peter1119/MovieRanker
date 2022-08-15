@@ -66,5 +66,6 @@ extension MovieListViewController: MovieListProtocol {
     
     func updateSearchTableView(isHidden: Bool) {
         searchTableView.isHidden = isHidden
+        searchTableView.reloadData()
     }
 }

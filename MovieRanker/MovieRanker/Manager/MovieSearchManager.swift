@@ -12,10 +12,10 @@ protocol MovieSearchManagerProtocol {
     func requestMovieList(from keyword: String, completion: @escaping([Movie]) -> Void)
 }
 
-struct MovieSearchManager {
+struct MovieSearchManager: MovieSearchManagerProtocol {
     func requestMovieList(from keyword: String, completion: @escaping([Movie]) -> Void) {
-        guard let url = URL(string: "https://openapi.naver.com/v1/search/movie.json?query=starwars") else { return }
-        let parameters = MovieSearchRequestModel(keyword: keyword)
+        guard let url = URL(string: "https://openapi.naver.com/v1/search/movie.json") else { return }
+        let parameters = MovieSearchRequestModel(keyword: keyword).toParameters()
         let headers: HTTPHeaders = [
             "X-Naver-Client-Id": "q4J0F0LcV_1JEXxI5N3z",
             "X-Naver-Client-Secret": "MfuLbuKkXd"

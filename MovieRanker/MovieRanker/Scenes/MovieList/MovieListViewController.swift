@@ -68,4 +68,9 @@ extension MovieListViewController: MovieListProtocol {
         searchTableView.isHidden = isHidden
         searchTableView.reloadData()
     }
+    
+    func pushToMovieDetailViewController(with movie: Movie) {
+        let movieDetailViewController = MovieDetailViewController()
+        navigationController?.pushViewController(movieDetailViewController, animated: true)
+    }
 }

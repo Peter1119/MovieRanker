@@ -12,6 +12,7 @@ protocol MovieListProtocol: AnyObject {
     func setUpSearchBar()
     func setUpViews()
     func updateSearchTableView(isHidden: Bool)
+    func pushToMovieDetailViewController(with movie: Movie)
 }
 
 final class MovieListPresenter: NSObject {
@@ -21,6 +22,7 @@ final class MovieListPresenter: NSObject {
     private let movieSearchManager: MovieSearchManagerProtocol
     
     private var searchedMovie = [Movie]()
+    private var likedMovie = [Movie]()
     
     init(
         viewController: MovieListViewController,
@@ -40,6 +42,11 @@ final class MovieListPresenter: NSObject {
 extension MovieListPresenter: UISearchBarDelegate { }
 
 extension MovieListPresenter: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = likedMovie[indexPath.item]
+        viewController?.pushToMovieDetailViewController(with: movie)
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -79,6 +86,11 @@ extension MovieListPresenter: UICollectionViewDataSource {
 }
 
 extension MovieListPresenter: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = searchedMovie[indexPath.row]
+        viewController?.pushToMovieDetailViewController(with: movie)
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         viewController?.updateSearchTableView(isHidden: false)
     }

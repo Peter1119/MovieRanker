@@ -70,7 +70,7 @@ extension MovieListViewController: MovieListProtocol {
     }
     
     func pushToMovieDetailViewController(with movie: Movie) {
-        let movieDetailViewController = MovieDetailViewController()
+        let movieDetailViewController = MovieDetailViewController(movie: movie)
         navigationController?.pushViewController(movieDetailViewController, animated: true)
     }
 }

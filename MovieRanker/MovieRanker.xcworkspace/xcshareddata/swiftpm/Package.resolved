@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "pinlayout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/layoutBox/PinLayout",
+      "state" : {
+        "revision" : "75c88c5c374c7bc78a154ffdf963cd362f38258a",
+        "version" : "1.10.3"
+      }
+    },
+    {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SnapKit/SnapKit.git",

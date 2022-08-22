@@ -25,6 +25,7 @@
 		3502571228A5401600D01CB3 /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502571128A5401600D01CB3 /* MovieListPresenter.swift */; };
 		3502571428A547AE00D01CB3 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502571328A547AE00D01CB3 /* MovieListCollectionViewCell.swift */; };
 		353CBA1128A5A94B00865989 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 353CBA1028A5A94B00865989 /* .swiftlint.yml */; };
+		3547239628B30CD100B542A2 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 3547239528B30CD100B542A2 /* PinLayout */; };
 		35541BB028A8D49000D49329 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 35541BAF28A8D49000D49329 /* Then */; };
 		35541BB228AC4B4900D49329 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35541BB128AC4B4900D49329 /* MovieDetailViewController.swift */; };
 		35541BB428AC4B5900D49329 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35541BB328AC4B5900D49329 /* MovieDetailPresenter.swift */; };
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3547239628B30CD100B542A2 /* PinLayout in Frameworks */,
 				35541BB028A8D49000D49329 /* Then in Frameworks */,
 				3502570128A5380C00D01CB3 /* Kingfisher in Frameworks */,
 				3502570528A538C300D01CB3 /* Alamofire in Frameworks */,
@@ -254,6 +256,7 @@
 				3502570028A5380C00D01CB3 /* Kingfisher */,
 				3502570428A538C300D01CB3 /* Alamofire */,
 				35541BAF28A8D49000D49329 /* Then */,
+				3547239528B30CD100B542A2 /* PinLayout */,
 			);
 			productName = MovieRanker;
 			productReference = 350256C628A537AA00D01CB3 /* MovieRanker.app */;
@@ -334,6 +337,7 @@
 				350256FF28A5380C00D01CB3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				3502570328A538C300D01CB3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				35541BAE28A8D48F00D49329 /* XCRemoteSwiftPackageReference "Then" */,
+				3547239428B30CD100B542A2 /* XCRemoteSwiftPackageReference "PinLayout" */,
 			);
 			productRefGroup = 350256C728A537AA00D01CB3 /* Products */;
 			projectDirPath = "";
@@ -839,6 +843,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		3547239428B30CD100B542A2 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		35541BAE28A8D48F00D49329 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -864,6 +876,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3502570328A538C300D01CB3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		3547239528B30CD100B542A2 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3547239428B30CD100B542A2 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
 		};
 		35541BAF28A8D49000D49329 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

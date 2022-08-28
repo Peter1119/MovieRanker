@@ -29,6 +29,8 @@
 		35541BB028A8D49000D49329 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 35541BAF28A8D49000D49329 /* Then */; };
 		35541BB228AC4B4900D49329 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35541BB128AC4B4900D49329 /* MovieDetailViewController.swift */; };
 		35541BB428AC4B5900D49329 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35541BB328AC4B5900D49329 /* MovieDetailPresenter.swift */; };
+		359D852028BB9610002F7B24 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 359D851F28BB9610002F7B24 /* SnapKit */; };
+		359D852328BB9C72002F7B24 /* MovieContentsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D852228BB9C72002F7B24 /* MovieContentsStackView.swift */; };
 		659A17A112E0DCECEC4957A1 /* Pods_MovieRankerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F55EB98386884C5EE6D02C6 /* Pods_MovieRankerTests.framework */; };
 		7E4F287DE4812425309BDAED /* Pods_MovieRanker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FC3E864801DE0EFEF2449E /* Pods_MovieRanker.framework */; };
 		83F8F49C1E3ADC4D1714F7FD /* Pods_MovieRanker_MovieRankerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B74B56A3FCC6AADF9302CA /* Pods_MovieRanker_MovieRankerUITests.framework */; };
@@ -74,6 +76,7 @@
 		353CBA1028A5A94B00865989 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		35541BB128AC4B4900D49329 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		35541BB328AC4B5900D49329 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
+		359D852228BB9C72002F7B24 /* MovieContentsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieContentsStackView.swift; sourceTree = "<group>"; };
 		43B74B56A3FCC6AADF9302CA /* Pods_MovieRanker_MovieRankerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRanker_MovieRankerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FC3E864801DE0EFEF2449E /* Pods_MovieRanker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRanker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55EB98386884C5EE6D02C6 /* Pods_MovieRankerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRankerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +95,7 @@
 				3547239628B30CD100B542A2 /* PinLayout in Frameworks */,
 				35541BB028A8D49000D49329 /* Then in Frameworks */,
 				3502570128A5380C00D01CB3 /* Kingfisher in Frameworks */,
+				359D852028BB9610002F7B24 /* SnapKit in Frameworks */,
 				3502570528A538C300D01CB3 /* Alamofire in Frameworks */,
 				350256FB28A537E200D01CB3 /* SnapKit in Frameworks */,
 				7E4F287DE4812425309BDAED /* Pods_MovieRanker.framework in Frameworks */,
@@ -186,8 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3502571528A547B600D01CB3 /* MovieList */,
-				35541BB128AC4B4900D49329 /* MovieDetailViewController.swift */,
-				35541BB328AC4B5900D49329 /* MovieDetailPresenter.swift */,
+				359D852128BB9C62002F7B24 /* MovieDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -208,6 +211,16 @@
 				3502571328A547AE00D01CB3 /* MovieListCollectionViewCell.swift */,
 			);
 			path = MovieList;
+			sourceTree = "<group>";
+		};
+		359D852128BB9C62002F7B24 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				35541BB128AC4B4900D49329 /* MovieDetailViewController.swift */,
+				35541BB328AC4B5900D49329 /* MovieDetailPresenter.swift */,
+				359D852228BB9C72002F7B24 /* MovieContentsStackView.swift */,
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 		A0A56F32D8F18B687F9E1A73 /* Frameworks */ = {
@@ -257,6 +270,7 @@
 				3502570428A538C300D01CB3 /* Alamofire */,
 				35541BAF28A8D49000D49329 /* Then */,
 				3547239528B30CD100B542A2 /* PinLayout */,
+				359D851F28BB9610002F7B24 /* SnapKit */,
 			);
 			productName = MovieRanker;
 			productReference = 350256C628A537AA00D01CB3 /* MovieRanker.app */;
@@ -338,6 +352,7 @@
 				3502570328A538C300D01CB3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				35541BAE28A8D48F00D49329 /* XCRemoteSwiftPackageReference "Then" */,
 				3547239428B30CD100B542A2 /* XCRemoteSwiftPackageReference "PinLayout" */,
+				359D851E28BB9610002F7B24 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 350256C728A537AA00D01CB3 /* Products */;
 			projectDirPath = "";
@@ -475,6 +490,7 @@
 				350256CE28A537AA00D01CB3 /* MovieListViewController.swift in Sources */,
 				3502571428A547AE00D01CB3 /* MovieListCollectionViewCell.swift in Sources */,
 				350256CA28A537AA00D01CB3 /* AppDelegate.swift in Sources */,
+				359D852328BB9C72002F7B24 /* MovieContentsStackView.swift in Sources */,
 				35541BB228AC4B4900D49329 /* MovieDetailViewController.swift in Sources */,
 				35541BB428AC4B5900D49329 /* MovieDetailPresenter.swift in Sources */,
 				3502570F28A53D2000D01CB3 /* MovieSearchManager.swift in Sources */,
@@ -859,6 +875,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		359D851E28BB9610002F7B24 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -886,6 +910,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 35541BAE28A8D48F00D49329 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		359D851F28BB9610002F7B24 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 350256F928A537E200D01CB3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

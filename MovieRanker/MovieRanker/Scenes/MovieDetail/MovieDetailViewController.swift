@@ -46,15 +46,30 @@ extension MovieDetailViewController {
     func setViews(with movie: Movie) {
         view.backgroundColor = .systemBackground
         
-        navigationItem.title = movie.title
+        navigationItem.title = movie.title?
+            .replacingOccurrences(of: "<b>", with: "")
+            .replacingOccurrences(of: "</b>", with: "")
         imageView.kf.setImage(with: movie.imageURL)
         
-        let ratingContentsStack = MovieContentsStackView(title: "평점", contents: movie.userRating)
-        let actorContentsStack = MovieContentsStackView(title: "배우", contents: movie.actor)
+        let ratingContentsStack = MovieContentsStackView(title: "평점", contents: movie.userRating ?? String())
+        let actorContentsStack = MovieContentsStackView(title: "배우", contents: movie.actor ?? String())
+        let directorContentStack = MovieContentsStackView(title: "감독", contents: movie.director ?? String())
+        let pubDateContentStack = MovieContentsStackView(title: "제작년도", contents: movie.pubDate ?? String())
+        
+        let contentStack = UIStackView()
+        contentStack.axis = .vertical
+        contentStack.spacing = 8
+        
+        [
+            ratingContentsStack,
+            actorContentsStack,
+            directorContentStack,
+            pubDateContentStack
+        ].forEach { contentStack.addArrangedSubview($0)}
         
         let margin: CGFloat = 16
                 
-        [imageView, titleLabel]
+        [imageView, titleLabel, contentStack]
             .forEach { self.view.addSubview($0) }
         
         imageView.snp.makeConstraints { make in
@@ -63,5 +78,9 @@ extension MovieDetailViewController {
             make.height.equalTo(imageView.snp.width)
         }
 
+        contentStack.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(margin)
+            make.left.right.equalTo(imageView)
+        }
     }
 }

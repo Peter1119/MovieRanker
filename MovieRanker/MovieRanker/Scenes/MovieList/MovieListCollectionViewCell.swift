@@ -45,8 +45,9 @@ final class MovieListCollectionViewCell: UICollectionViewCell {
         setUpLayout()
         
         imageView.kf.setImage(with: movie.imageURL)
-        titleLabel.text = movie.title ?? ""
-        userRantingLabel.text = "⭐️ \(movie.userRating)"
+        titleLabel.text = movie.title?.replacingOccurrences(of: "<b>", with: "")
+            .replacingOccurrences(of: "</b>", with: "") ?? ""
+        userRantingLabel.text = "⭐️ \(movie.userRating ?? "")"
     }
 }
 

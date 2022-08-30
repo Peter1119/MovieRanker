@@ -115,7 +115,9 @@ extension MovieListPresenter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = searchedMovie[indexPath.row].title ?? ""
+        cell.textLabel?.text = searchedMovie[indexPath.row].title?
+            .replacingOccurrences(of: "<b>", with: "")
+            .replacingOccurrences(of: "</b>", with: "") ?? ""
         return cell
     }
 }

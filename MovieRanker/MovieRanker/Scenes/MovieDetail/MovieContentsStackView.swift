@@ -20,6 +20,8 @@ final class MovieContentsStackView: UIStackView {
     private lazy var contentsLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 14, weight: .medium)
         $0.text = contents
+        $0.numberOfLines = 0
+        $0.textAlignment = .left
     }
     
     init(title: String, contents: String) {
@@ -29,6 +31,7 @@ final class MovieContentsStackView: UIStackView {
         super.init(frame: .zero)
         
         axis = .horizontal
+        alignment = .top
         
         [titleLabel, contentsLabel]
             .forEach {
@@ -36,7 +39,7 @@ final class MovieContentsStackView: UIStackView {
             }
         
         titleLabel.snp.makeConstraints { make in
-            make.width.greaterThanOrEqualTo(80)
+            make.width.equalTo(80)
         }
     }
     
@@ -44,4 +47,3 @@ final class MovieContentsStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

@@ -31,6 +31,7 @@
 		35541BB428AC4B5900D49329 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35541BB328AC4B5900D49329 /* MovieDetailPresenter.swift */; };
 		359D852028BB9610002F7B24 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 359D851F28BB9610002F7B24 /* SnapKit */; };
 		359D852328BB9C72002F7B24 /* MovieContentsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D852228BB9C72002F7B24 /* MovieContentsStackView.swift */; };
+		359D852528BEC6D7002F7B24 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D852428BEC6D7002F7B24 /* UserDefaultsManager.swift */; };
 		659A17A112E0DCECEC4957A1 /* Pods_MovieRankerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F55EB98386884C5EE6D02C6 /* Pods_MovieRankerTests.framework */; };
 		7E4F287DE4812425309BDAED /* Pods_MovieRanker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FC3E864801DE0EFEF2449E /* Pods_MovieRanker.framework */; };
 		83F8F49C1E3ADC4D1714F7FD /* Pods_MovieRanker_MovieRankerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B74B56A3FCC6AADF9302CA /* Pods_MovieRanker_MovieRankerUITests.framework */; };
@@ -77,6 +78,7 @@
 		35541BB128AC4B4900D49329 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		35541BB328AC4B5900D49329 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		359D852228BB9C72002F7B24 /* MovieContentsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieContentsStackView.swift; sourceTree = "<group>"; };
+		359D852428BEC6D7002F7B24 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		43B74B56A3FCC6AADF9302CA /* Pods_MovieRanker_MovieRankerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRanker_MovieRankerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FC3E864801DE0EFEF2449E /* Pods_MovieRanker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRanker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55EB98386884C5EE6D02C6 /* Pods_MovieRankerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRankerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				3502570E28A53D2000D01CB3 /* MovieSearchManager.swift */,
+				359D852428BEC6D7002F7B24 /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				3502570928A53B8D00D01CB3 /* MovieSearchResponseModel.swift in Sources */,
 				3502570728A53A0A00D01CB3 /* MovieSearchRequestModel.swift in Sources */,
 				3502570B28A53CE600D01CB3 /* Movie.swift in Sources */,
+				359D852528BEC6D7002F7B24 /* UserDefaultsManager.swift in Sources */,
 				350256CE28A537AA00D01CB3 /* MovieListViewController.swift in Sources */,
 				3502571428A547AE00D01CB3 /* MovieListCollectionViewCell.swift in Sources */,
 				350256CA28A537AA00D01CB3 /* AppDelegate.swift in Sources */,

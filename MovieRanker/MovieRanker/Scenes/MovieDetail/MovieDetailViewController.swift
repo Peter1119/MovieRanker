@@ -25,6 +25,13 @@ final class MovieDetailViewController: UIViewController, MovieDetailProtocol {
         return imageView
     }()
     
+    private lazy var rightBarButtonItem = UIBarButtonItem(
+        image: UIImage(systemName: "star"),
+        style: .plain,
+        target: self,
+        action: #selector(didTapRightBarButtonItem)
+    )
+    
     init(movie: Movie) {
          super.init(nibName: nil, bundle: nil)
         
@@ -49,6 +56,8 @@ extension MovieDetailViewController {
         navigationItem.title = movie.title?
             .replacingOccurrences(of: "<b>", with: "")
             .replacingOccurrences(of: "</b>", with: "")
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        
         imageView.kf.setImage(with: movie.imageURL)
         
         let ratingContentsStack = MovieContentsStackView(title: "평점", contents: movie.userRating ?? String())
@@ -82,5 +91,16 @@ extension MovieDetailViewController {
             make.top.equalTo(imageView.snp.bottom).offset(margin)
             make.left.right.equalTo(imageView)
         }
+    }
+    
+    func setRightBarButton(with isLiked: Bool) {
+        let imageName = isLiked ? "star.fill" : "star"
+        rightBarButtonItem.image = UIImage(systemName: imageName)
+    }
+}
+
+private extension MovieDetailViewController {
+    @objc func didTapRightBarButtonItem() {
+        presenter.didTapRightBarButtonItem()
     }
 }

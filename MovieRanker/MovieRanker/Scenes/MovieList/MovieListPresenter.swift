@@ -18,7 +18,7 @@ protocol MovieListProtocol: AnyObject {
 final class MovieListPresenter: NSObject {
     // 메모리 릭에 대한 예비
     private weak var viewController: MovieListViewController?
-    
+    private let userDefaultsManager: UserDefaultsManagerProtocol
     private let movieSearchManager: MovieSearchManagerProtocol
     
     private var searchedMovie = [Movie]()
@@ -26,16 +26,23 @@ final class MovieListPresenter: NSObject {
     
     init(
         viewController: MovieListViewController,
-        movieSearchManager: MovieSearchManagerProtocol = MovieSearchManager()
+        movieSearchManager: MovieSearchManagerProtocol = MovieSearchManager(),
+        userDefaultsManager: UserDefaultsManagerProtocol = UserDefaultsManager()
     ) {
         self.viewController = viewController
         self.movieSearchManager = movieSearchManager
+        self.userDefaultsManager = userDefaultsManager
     }
     
     func viewDidLoad() {
         viewController?.setUpNavigationBar()
         viewController?.setUpSearchBar()
         viewController?.setUpViews()
+    }
+    
+    func viewWillAppear() {
+        likedMovie = userDefaultsManager.getMovies()
+        viewController?.updateCollectionView()
     }
 }
 
@@ -69,7 +76,7 @@ extension MovieListPresenter: UICollectionViewDelegateFlowLayout {
 
 extension MovieListPresenter: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searchedMovie.count
+        return likedMovie.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
@@ -78,7 +85,7 @@ extension MovieListPresenter: UICollectionViewDataSource {
             withReuseIdentifier: MovieListCollectionViewCell.identifier,
             for: indexPath) as? MovieListCollectionViewCell else { return UICollectionViewCell() }
         
-        let movie = searchedMovie[indexPath.item]
+        let movie = likedMovie[indexPath.item]
         cell.bind(movie)
         
         return cell
